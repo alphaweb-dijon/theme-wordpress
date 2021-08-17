@@ -21,7 +21,21 @@ get_header()
     </div><!-- ferme container -->
 </div><!-- ferme projects -->
 
-<?php get_template_part( 'archive' ); ?>
+<div class='prestations'>
+    <h2>Nos Prestations</h2>
+    <div class="container">
+        <div class="justify-content-center">
+
+        <?php $loop = new WP_Query((array('post_type' => 'prestations','order'=>'ASC'))); ?>
+        <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        <div>
+            <h3><?php the_title() ?></h3>
+            <?php the_content() ?>
+            </div>
+        <?php endwhile; wp_reset_query(); ?>
+        </div> <!-- ferme justify-content-center -->
+    </div><!-- ferme container -->
+</div><!-- ferme prestations -->
 
 <div class="contact">
     <div class="text">
@@ -29,7 +43,7 @@ get_header()
     <p>Contactez-nous pour un devis personnalisé !</p>
     </div>
     <button>
-        <a href="contact.php">Contactez-nous</a>
+        Contactez-nous
     </button>
 </div>
 

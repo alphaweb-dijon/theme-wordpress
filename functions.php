@@ -76,3 +76,9 @@ function alphaweb_register_post_types() {
 	register_post_type( 'prestations', $args );
     }
 add_action( 'init', 'alphaweb_register_post_types' );
+
+// déclarer les menus
+register_nav_menus( array(
+	'main' => 'headermenu',
+	'footer' => 'footermenu',
+) );
