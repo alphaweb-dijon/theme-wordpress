@@ -28,7 +28,7 @@ get_header()
 
         <?php $loop = new WP_Query((array('post_type' => 'prestations','order'=>'ASC'))); ?>
         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-        <div>
+        <div class='single_prest'>
             <h3><?php the_title() ?></h3>
             <?php the_content() ?>
             </div>

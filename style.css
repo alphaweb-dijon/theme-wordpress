@@ -104,6 +104,14 @@ button{
   background: #000000;
   border-radius: 40px;
 }
+.prestations .container{
+  display: flex;
+  font-size: 1rem;
+}
+.prestations .single_prest{
+  display: flex;
+  flex-direction: column;
+}
 
 @media screen and (max-width: 640px) {
 
