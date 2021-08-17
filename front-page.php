@@ -8,6 +8,7 @@ get_header()
     </div>
 </div>
 <div class='projects'>
+    <h2>Nos Projets</h2>
     <div class="container">
         <div class="justify-content-center">
 
@@ -16,8 +17,11 @@ get_header()
             <a target='blank' href="<?php echo get_post_meta( get_the_ID(), 'lien', true ); ?>"><?php the_post_thumbnail()?></a>
     
         <?php endwhile; endif; ?>
-        </div>
-    </div>
+        </div> <!-- ferme justify-content-center -->
+    </div><!-- ferme container -->
+</div><!-- ferme projects -->
+<div>
+    
 </div>
 <?php
 get_footer()

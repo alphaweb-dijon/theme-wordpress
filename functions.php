@@ -39,3 +39,30 @@ function alphaweb3_register_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'alphaweb3_register_assets' );
 
+// Déclarer un custom post types
+function alphaweb_register_post_types() {
+	// La déclaration de nos Custom Post Types et Taxonomies ira ici
+    // CPT Portfolio
+    $labels = array(
+        'name' => 'prestations',
+        'all_items' => 'Toutes les prestations',  // affiché dans le sous menu
+        'singular_name' => 'prestations',
+        'add_new_item' => 'Ajouter une prestation',
+        'edit_item' => 'Modifier la prestation',
+        'menu_name' => 'Prestations'
+    );
+
+	$args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'supports' => array( 'title', 'editor','thumbnail' ),
+        'menu_position' => 5, 
+        'menu_icon'   => 'dashicons-money-alt',
+	);
+
+	register_post_type( 'portfolio', $args );
+    }
+add_action( 'init', 'alphaweb_register_post_types' );
+

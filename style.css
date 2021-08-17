@@ -64,13 +64,19 @@ nav menu a {
 .hero h1 {
   font-family: "circular_black";
 }/*# sourceMappingURL=main.css.map */
-/* .projects{
-    background-color : black;
-} */
+.projects{
+  background-color: black;
+  color:white;
+}
+.projects h2{
+  padding: 5rem;
+}
 .projects img{
     width: 400px;
+    border: 1px solid grey;
     height: auto;
     padding: 24px;
+
 }
 .container div{
   max-width: 80rem;
