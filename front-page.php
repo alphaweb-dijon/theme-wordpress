@@ -20,9 +20,19 @@ get_header()
         </div> <!-- ferme justify-content-center -->
     </div><!-- ferme container -->
 </div><!-- ferme projects -->
-<div>
-    
+
+<?php get_template_part( 'archive' ); ?>
+
+<div class="contact">
+    <div class="text">
+    <h2>Logo, cartes de visite, photo, vidéo ...</h2>
+    <p>Contactez-nous pour un devis personnalisé !</p>
+    </div>
+    <button>
+        <a href="contact.php">Contactez-nous</a>
+    </button>
 </div>
+
 <?php
 get_footer()
 ?>

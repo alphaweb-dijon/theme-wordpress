@@ -1,10 +1,21 @@
 <?php 
 
+
+add_theme_support( 'custom-logo', array(
+    'height'      => 'auto',
+    'width'       => 300,
+    'flex-width' => true,
+ ) );
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
 
 // Ajouter automatiquement le titre du site dans l'en-tête du site
 add_theme_support( 'title-tag' );
+
+function theme_prefix_setup() {
+    add_theme_support( 'custom-logo' );
+}
+add_action( 'after_setup_theme', 'theme_prefix_setup' );
 
 // Pour charger des styles
 function alphaweb3_register_assets() {
@@ -62,7 +73,6 @@ function alphaweb_register_post_types() {
         'menu_icon'   => 'dashicons-money-alt',
 	);
 
-	register_post_type( 'portfolio', $args );
+	register_post_type( 'prestations', $args );
     }
 add_action( 'init', 'alphaweb_register_post_types' );
-

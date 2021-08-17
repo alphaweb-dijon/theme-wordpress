@@ -1,9 +1,1 @@
-<?php
-get_header()
-?>
-
-HOME.php
-
-<?php
-get_footer()
-?>
+<?php get_template_part( 'archive' ); ?>

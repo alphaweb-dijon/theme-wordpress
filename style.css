@@ -25,7 +25,6 @@ Version: 1.0
 /* * {
   border: 1px solid grey;
 } */
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -73,14 +72,45 @@ nav menu a {
 }
 .projects img{
     width: 400px;
-    border: 1px solid grey;
     height: auto;
     padding: 24px;
-
 }
 .container div{
   max-width: 80rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+.prestations h2{
+  padding: 5rem;
+}
+.contact{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15%;
+box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+.text{
+  margin: 2rem;
+}
+button{
+  margin: 2rem;
+  width: 152px;
+  height: 40px;
+  text-decoration: none;
+  color:white;
+  background: #000000;
+  border-radius: 40px;
+}
+
+@media screen and (max-width: 640px) {
+
+  .contact{
+    flex-direction: column;
+  }
+  button{
+    align-items: flex-end;
+  }
 }
