@@ -53,7 +53,7 @@ add_action( 'wp_enqueue_scripts', 'alphaweb3_register_assets' );
 // Déclarer un custom post types
 function alphaweb_register_post_types() {
 	// La déclaration de nos Custom Post Types et Taxonomies ira ici
-    // CPT Portfolio
+    // CPT prestations
     $labels = array(
         'name' => 'prestations',
         'all_items' => 'Toutes les prestations',  // affiché dans le sous menu
@@ -74,6 +74,72 @@ function alphaweb_register_post_types() {
 	);
 
 	register_post_type( 'prestations', $args );
+
+        // CPT contact
+        $labels = array(
+            'name' => 'contact',
+            'all_items' => 'la bannière en page daccueil',  // affiché dans le sous menu
+            'singular_name' => 'contact',
+            'add_new_item' => 'Ajouter une bannière',
+            'edit_item' => 'Modifier la bannière',
+            'menu_name' => 'Contact'
+        );
+    
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'supports' => array( 'title', 'editor','thumbnail' ),
+            'menu_position' => 5, 
+            'menu_icon'   => 'dashicons-money-alt',
+        );
+
+        register_post_type( 'contact', $args );
+
+        // CPT equipe
+        $labels = array(
+            'name' => 'equipe',
+            'all_items' => 'la bannière en page daccueil',  // affiché dans le sous menu
+            'singular_name' => 'equipe',
+            'add_new_item' => 'Ajouter du personnel',
+            'edit_item' => 'Modifier le personnel',
+            'menu_name' => 'Equipe'
+        );
+    
+        $args = array(
+            'labels' => $labels,
+            'public' => true,
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'supports' => array( 'title', 'editor','thumbnail' ),
+            'menu_position' => 5, 
+            'menu_icon'   => 'dashicons-money-alt',
+        );
+    
+        register_post_type( 'equipe', $args );
+
+                // CPT presentation
+                $labels = array(
+                    'name' => 'presentation',
+                    'all_items' => 'la bannière en page daccueil',  // affiché dans le sous menu
+                    'singular_name' => 'equipe',
+                    'add_new_item' => 'Ajouter une description',
+                    'edit_item' => 'Modifier le presentation',
+                    'menu_name' => 'Présentation'
+                );
+            
+                $args = array(
+                    'labels' => $labels,
+                    'public' => true,
+                    'show_in_rest' => true,
+                    'has_archive' => true,
+                    'supports' => array( 'title', 'editor','thumbnail' ),
+                    'menu_position' => 5, 
+                    'menu_icon'   => 'dashicons-money-alt',
+                );
+            
+                register_post_type( 'presentation', $args );
     }
 add_action( 'init', 'alphaweb_register_post_types' );
 

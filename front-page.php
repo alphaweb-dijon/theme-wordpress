@@ -21,31 +21,39 @@ get_header()
     </div><!-- ferme container -->
 </div><!-- ferme projects -->
 
+
 <div class='prestations'>
     <h2>Nos Prestations</h2>
     <div class="container">
-        <div class="justify-content-center">
-
+        <div class="justify-content-between" style="width: 100%;">
         <?php $loop = new WP_Query((array('post_type' => 'prestations','order'=>'ASC'))); ?>
         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-        <div class='single_prest'>
-            <h3><?php the_title() ?></h3>
-            <?php the_content() ?>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><?php the_title() ?></h5>
+                    <p class="card-text"><?php the_content() ?></p>
+                </div>
             </div>
-        <?php endwhile; wp_reset_query(); ?>
+            <?php endwhile; wp_reset_query(); ?>
         </div> <!-- ferme justify-content-center -->
     </div><!-- ferme container -->
 </div><!-- ferme prestations -->
 
-<div class="contact">
-    <div class="text">
-    <h2>Logo, cartes de visite, photo, vidéo ...</h2>
-    <p>Contactez-nous pour un devis personnalisé !</p>
-    </div>
-    <button>
-        Contactez-nous
-    </button>
-</div>
+<div class='prestations'>
+    <div class="container_contact">
+        <?php $loop = new WP_Query((array('post_type' => 'contact','order'=>'ASC'))); ?>
+        <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                <div class=banner_contact_text'> 
+                    <h5><?php the_title() ?></h5><br>
+                    <?php the_content() ?>
+                </div>
+            <?php endwhile; wp_reset_query(); ?>
+    </div><!-- ferme container_contact -->
+</div><!-- ferme prestations -->
+
+<?php
+get_template_part('archive');
+?>
 
 <?php
 get_footer()
