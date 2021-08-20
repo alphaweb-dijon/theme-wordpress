@@ -8,7 +8,19 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+<?php 
+if ( is_user_logged_in() ):
+	$current_user = wp_get_current_user(); 
+?>
+	<p>
+        <?php echo $current_user->user_firstname; ?>
+        <a href="<?php echo wp_logout_url(); ?>"> have a break </a>
+	</p>
+<?php else: ?>
+    <p>
+        <a href="<?php echo wp_login_url(); ?>"> Connecte-toi gros ! </a>
+	</p>
+<?php endif; ?>
     <?php wp_body_open(); ?>
 
   

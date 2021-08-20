@@ -100,7 +100,7 @@ function alphaweb_register_post_types() {
         // CPT equipe
         $labels = array(
             'name' => 'equipe',
-            'all_items' => 'la bannière en page daccueil',  // affiché dans le sous menu
+            'all_items' => 'employés',  // affiché dans le sous menu
             'singular_name' => 'equipe',
             'add_new_item' => 'Ajouter du personnel',
             'edit_item' => 'Modifier le personnel',
@@ -125,7 +125,7 @@ function alphaweb_register_post_types() {
                     'all_items' => 'la bannière en page daccueil',  // affiché dans le sous menu
                     'singular_name' => 'equipe',
                     'add_new_item' => 'Ajouter une description',
-                    'edit_item' => 'Modifier le presentation',
+                    'edit_item' => 'Modifier la presentation',
                     'menu_name' => 'Présentation'
                 );
             
