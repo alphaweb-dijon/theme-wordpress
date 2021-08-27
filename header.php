@@ -23,4 +23,15 @@ if ( is_user_logged_in() ):
 <?php endif; ?>
     <?php wp_body_open(); ?>
 
-  
+    <div class="headerBann">
+        <div class="bannLeft">
+            <p>IMAGE</p>
+        </div>
+        <div class="bannRight">
+            <p>Accueil</p>
+            <p>Equipe</p>
+            <p>Contact</p>
+            <p>Avis</p>
+        </div>
+
+</div>  
